@@ -1,17 +1,19 @@
+import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react';
 import './App.css';
 
-import MenuPrincipal from './componentes/MenuPrincipal';
-import Rutas from './componentes/Rutas';
-
-import { BrowserRouter } from 'react-router-dom';
 
 function App() {
+  const {loginWithRedirect}= useAuth0();
+  
+  
   return (
-    <BrowserRouter>
-      <MenuPrincipal />
-      <Rutas />
-    </BrowserRouter>
+    <div className="App">
+      <h1>aplication</h1>
+      <button onClick={()=> loginWithRedirect}>login</button>
+    </div>
   );
 }
 
 export default App;
+
